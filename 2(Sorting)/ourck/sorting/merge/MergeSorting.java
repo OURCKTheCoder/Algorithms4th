@@ -9,6 +9,8 @@ public class MergeSorting extends BasicSorting {
 	public void merge(Comparable[] a, int lo, int mid, int hi) { // mid?
 		int i = lo; int j = mid + 1; // 2x ptrs.
 		
+		if(less(a[mid], a[mid + 1])) return; // 降低复杂度至线性级别:P180 2.2.8
+		
 		for(int l = 0; l < a.length; l++) {
 			aux[l] = a[l];
 		}
